@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Isometric Text</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(105, 102, 243);
+            overflow: hidden;
+        }
+        
+        #text {
+            position: relative;
+            color: #fff;
+            font-weight: 700;
+            font-size: 12em;
+            line-height: 0.9em;
+            letter-spacing: 2px;
+            text-align: center;
+            transform: rotate(-28deg) skew(25deg);
+        }
+        
+        #text:before {
+            content: 'data-text';
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            color: rgba(0, 0, 0, 0.3);
+            text-shadow: none;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        /* Source: https://www.youtube.com/watch?v=H7lEwIGggpA
+            By Online Tutorials */
+    </style>
+</head>
+
+<body>
+    <div id="text" data-text="CSS 3D Isometric Text">CSS 3D Isometric Text</div>
+
+    <script type="text/javascript">
+        let text = document.getElementById('text')
+        let shadow = '';
+        for (let i = 0; i < 50; i++) {
+            //shadow += (shadow ? ',' : '') + i * 1 + 'px ' + i * 1 + 'px 0 #ff99f9';
+            shadow += (shadow ? ',' : '') + i * 1 + 'px ' + i * 1 + 'px 0 #999fff';
+        }
+        text.style.textShadow = shadow;
+    </script>
+</body>
+<!-- Source: https://www.youtube.com/watch?v=H7lEwIGggpA
+By Online Tutorials -->
+
+</html>
